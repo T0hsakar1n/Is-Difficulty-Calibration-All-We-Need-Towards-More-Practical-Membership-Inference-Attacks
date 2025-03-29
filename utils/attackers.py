@@ -56,7 +56,7 @@ class MiaAttack:
             
         self.attack_in_confidences, self.attack_in_targets = \
             torch.cat(shadow_in_confidence_list, dim = 1).mean(dim = 1, keepdim = True), attack_in_targets
-        self.attack_out_confidences, self.attack_out_targetss = \
+        self.attack_out_confidences, self.attack_out_targets = \
             torch.cat(shadow_out_confidence_list, dim = 1).mean(dim = 1, keepdim = True), attack_out_targets
         
         self.victim_in_confidences, self.victim_in_targets = \

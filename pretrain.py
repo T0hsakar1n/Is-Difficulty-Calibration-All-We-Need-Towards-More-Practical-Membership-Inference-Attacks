@@ -60,7 +60,7 @@ def main(args):
     if not os.path.exists(save_folder):
         print(f"{save_folder} not exists, create a new one")
         print("Random split total dataset into victim dataset, shadow dataset and tuning dataset..." )
-        os.mkdir(save_folder)
+        os.makedirs(save_folder)
         victim_list, attack_list = train_test_split(list(range(total_size)), test_size=2/3, random_state=args.seed)
         attack_list, tuning_list = train_test_split(attack_list, test_size=0.5, random_state=args.seed)
         victim_train_list, victim_test_list = train_test_split(victim_list, test_size=0.5, random_state=args.seed)
